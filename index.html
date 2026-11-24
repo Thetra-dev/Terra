@@ -10,8 +10,206 @@
         --white: #ffffff;
     }
     * {
-        
+        margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
     }
+
+    body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigasi */
+        nav {
+            background-color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Bagian Utama (Hero) */
+        .hero {
+            text-align: center;
+            padding: 5rem 5% 4rem;
+            background-color: var(--white);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 4px solid var(--primary-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Bagian Konten Umum */
+        section {
+            padding: 4rem 10%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        /* Tentang Saya */
+        .about-text {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Portofolio / Karya */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Kontak */
+        .contact {
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--primary-color);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--text-dark);
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        /* Responsif untuk HP */
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            section {
+                padding: 3rem 5%;
+            }
+        }
 </style>
 <head>
     <meta charset="UTF-8">
@@ -29,5 +227,67 @@
         <li>menjadi bantuan pada CV</li>
         <li>mencoba 50% code manual dan 50% ai</li>
     </ol>
+</body>
+<nav>
+    <a href="#" class="logo">arkknight</a>
+    <ul class="nav-links">
+        <li><a href="#mahasiswa_iseng">tentang</a></li>
+        <li><a href="#tidak_tersedia">karya</a></li>
+        <li><a href="#tidak_tersedia">kontak</a></li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <img src="WhatsApp Image 2026-11-24 at 11.42.35.jpeg" alt="foto profil" class="profile-img">
+    <h1>Hai, aku Teguh Satya Nugraha</h1>
+    <p>mahasiswa iseng dan introvert yang sedang belajar coding dan web development</p>
+    <a href="#kontak" class="btn">hubungi saya</a>
+</header>
+section id="tentang">
+        <h2>Tentang Saya</h2>
+        <p class="about-text">
+            sekedar sepotong kue
+        </p>
+    </section>
+    section id="karya">
+        <h2>Karya & Proyek</h2>
+        <div class="portfolio-grid">
+            <!-- Kartu Proyek 1 -->
+            <div class="card">
+                <h3>Nama Proyek Pertama</h3>
+                <p>Deskripsi singkat mengenai proyek ini, tujuan dibuatnya, dan teknologi atau alat yang Anda gunakan.</p>
+                <a href="#">Lihat Detail &rarr;</a>
+            </div>
+            <!-- Kartu Proyek 2 -->
+            <div class="card">
+                <h3>Nama Proyek Kedua</h3>
+                <p>Deskripsi singkat mengenai proyek ini, tujuan dibuatnya, dan teknologi atau alat yang Anda gunakan.</p>
+                <a href="#">Lihat Detail &rarr;</a>
+            </div>
+            <!-- Kartu Proyek 3 -->
+            <div class="card">
+                <h3>Nama Proyek Ketiga</h3>
+                <p>Deskripsi singkat mengenai proyek ini, tujuan dibuatnya, dan teknologi atau alat yang Anda gunakan.</p>
+                <a href="#">Lihat Detail &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Kontak -->
+    <section id="kontak" class="contact">
+        <h2>Mari Terhubung</h2>
+        <p>Tertarik untuk berdiskusi atau bekerja sama? Silakan hubungi saya melalui tautan di bawah ini:</p>
+        <div class="social-links">
+            <a href="teguhsn.mulyono@gmail.com">Email</a>
+            <a href="https://github.com/Thetra-dev/Terra" target="_blank">GitHub</a>
+            <a href="https://www.instagram.com/teguhsn.mulyono/" target="_blank">Instagram</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Teguh Satya Nugraha. Dibuat dengan HTML & CSS.</p>
+    </footer>
+
 </body>
 </html>
